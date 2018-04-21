@@ -1,36 +1,190 @@
-<div class="header">
+<div class="wrapper white">
+  <div class="header">
     <div class="header-info">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <%= link_to("", class: "facebook") do %>
-                       <i class="fa fa-facebook" alt="Facebook" title="Facebook"></i> 
-                    <% end %>
-                    <%= link_to("", class: "instagram") do %>
-                       <i class="fa fa-instagram" alt="Instagram" title="Instagram"></i> 
-                    <% end %>
-                    <%= link_to("", class: "twitter") do %>
-                       <i class="fa fa-twitter" alt="Twitter" title="Twitter"></i> 
-                    <% end %>
-                    <%= link_to("", class: "pinterest") do %>
-                       <i class="fa fa-pinterest" alt="Pinterest" title="Pinterest"></i> 
-                    <% end %>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="search">
-                    <!-- Harusnya ada form, untuk search apa tapi ? -->
-                        <div class="input-group">
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="social">
+              <%= link_to("", class: "facebook") do %>
+                <i class="fa fa-facebook" alt="Facebook" title="Facebook"></i> 
+              <% end %>
+              <%= link_to("", class: "instagram") do %>
+                <i class="fa fa-instagram" alt="Instagram" title="Instagram"></i> 
+              <% end %>
+              <%= link_to("", class: "twitter") do %>
+                <i class="fa fa-twitter" alt="Twitter" title="Twitter"></i> 
+              <% end %>
+              <%= link_to("", class: "pinterest") do %>
+                <i class="fa fa-pinterest" alt="Pinterest" title="Pinterest"></i> 
+              <% end %>
             </div>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <div class="search pull-right">
+              <form>
+                <!-- Harusnya ada form, untuk search apa tapi ? -->
+                <div class="input-group">
+                  <%= text_field :search, :global, class: "form-control", placeholder: "Search this website" %>
+                  <span class="input-group-btn">
+                    <%= button_tag("search", class: "btn") do %>
+                      <i class="fa fa-search"></i>   
+                    <% end %>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="header-navigation">
-        <div class="container">
-            <div class="logo">
-                <h1> <%= link_to "Redd One Digital", root_path %> </h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+              <div class="logo">
+                  <h1> <%= link_to "Redd One Digital", root_path %> </h1>
+              </div>
+          </div>
+            <div class="col-md-8">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                          <li>
+                            <%= link_to("", class: "br-orange") do %>
+                                <i class="fa fa-home link-icon"></i>
+                                <span class="link-title">Home</span>
+                            <% end %>
+                          </li>
+                          <li>
+                            <%= link_to("", class: "br-purple") do %>
+                                <i class="fa fa-user link-icon"></i>
+                                <span class="link-title">About Us</span>
+                            <% end %>
+                          </li>
+                          <li class="dropdown">
+                            <%= link_to("#", class: "dropdown-toggle br-pink", data: {toggle: "dropdown", "aria-expanded" => true}) do %>
+                                <i class="fa fa-calendar link-icon"></i>
+                                <span class="link-title">Event <b class=" fa fa-angle-down"></b></span>
+                            <% end %>
+                            <ul class="dropdown-menu dropdown-xs">
+                                <li>
+                                  <div class="row">
+                                    <div class="col-md-12">
+                                      <div class="col-inner">
+                                        <ul class="list-unstyled">
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Wedding
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Reunion
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Seminar
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Gathering
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Music
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Exhibition
+                                            <% end %>
+                                          </li>
+                                          <li>
+                                            <%= link_to("", class: "") do %>
+                                              <i class="fa fa-arrow-right dd-link-icon"></i>
+                                              Life Style
+                                            <% end %>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                                <%= link_to("", class: "br-green") do %>
+                                    <i class="fa fa-image link-icon"></i>
+                                    <span class="link-title">Gallery</span>
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to("", class: "br-yellow") do %>
+                                    <i class="fa fa-mobile link-icon"></i>
+                                    <span class="link-title">Contact Us</span>
+                                <% end %>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <div class="rev_slider_wrapper col-md-12">
+      <div id="rev_slider_1" class="rev_slider">
+       <ul class="tp-revslider">
+          <li  data-transition="fade">
+            <%= image_tag "slider/slide1.jpg" %>
+          </li>
+          <li  data-transition="fade">
+            <%= image_tag "slider/slide2.jpg" %>
+          </li>
+          <li  data-transition="fade">
+            <%= image_tag "slider/slide3.jpg" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+  jQuery(document).ready(function() {
+    jQuery('#rev_slider_1').show().revolution({
+      delay: 3000,
+      startheight:500,
+      
+      hideThumbs:10,
+      
+      navigationType:"none",	
+      
+      
+      hideArrowsOnMobile:"on",
+      
+      touchenabled:"on",
+      onHoverStop:"on",
+      
+      navOffsetHorizontal:0,
+      navOffsetVertical:20,
+      
+      stopAtSlide:-1,
+      stopAfterLoops:-1,
+
+      shadow:0,
+      
+      fullWidth:"on",
+      fullScreen:"off"
+    });
+  });
+</script>
