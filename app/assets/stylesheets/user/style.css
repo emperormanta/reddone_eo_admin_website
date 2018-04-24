@@ -541,13 +541,13 @@ strong{
 	border-radius: 40px;
 }
 
-.header .navbar-default .navbar-nav > li ul.dropdown-sm ul li,
+.header .navbar-default .navbar-nav > li ul.dropdown-xs ul li,
 .header .navbar-default .navbar-nav > li ul.dropdown-md ul li{
 	padding: 0px;
 	margin-bottom:3px;
 }
 
-.header .navbar-default .navbar-nav > li ul.dropdown-sm ul li a,
+.header .navbar-default .navbar-nav > li ul.dropdown-xs ul li a,
 .header .navbar-default .navbar-nav > li ul.dropdown-md ul li a{
 	display: block;
 	background: #14b9e8;
