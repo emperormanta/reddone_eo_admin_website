@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebsiteReddonedigital</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <%= render 'layouts/admin/side_menu' %>
+        <%= render 'layouts/admin/top_navigation' %>
+        <%= yield %>
+        <%= render 'layouts/admin/footer' %>
+      </div>
+    </div>
+  </body>
+  <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
+</html>
