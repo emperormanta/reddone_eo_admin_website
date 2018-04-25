@@ -3,7 +3,7 @@
 	  
 	  <div class="page-title">
 	    <div class="title_left">
-	      <h3>Form Elements</h3>
+	      <h3>Wedding</h3>
 	    </div>
 
 	    <div class="title_right">
@@ -20,56 +20,30 @@
 
 	  <div class="clearfix"></div>
 
-	  <div class="row">
+	  <div class="row" id="table-wedding">
 	    <div class="col-md-12 col-sm-12 col-xs-12">
 	      <div class="x_panel">
 	        <div class="x_title">
-	          <h2>Form Import Guest <small>Sessions</small></h2>
+	          <h2>List wedding <small>Sessions</small></h2>
 	          <ul class="nav navbar-right panel_toolbox">
-	            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-	            </li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-	              <ul class="dropdown-menu" role="menu">
-	                <li><a href="#">Settings 1</a>
-	                </li>
-	                <li><a href="#">Settings 2</a>
-	                </li>
-	              </ul>
-	            </li>
+	            <li><a id="add-wedding" ><i class="fa fa-plus-square"></i></a></li>
 	            <li><a class="close-link"><i class="fa fa-close"></i></a>
 	            </li>
 	          </ul>
 	          <div class="clearfix"></div>
 	        </div>
-	        <div class="x_content">
-	        	<%= form_tag('/admin/wedding/import', class: 'form-horizontal form-label-left', multipart: true)  do %>
-	        		<div class="item form-group">
-	        			<%= label_tag('choose', 'Choose wedding', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
-	        			<div class="col-md-6 col-sm-6 col-xs-12">
-	        				<%= select_tag("wedding",options_from_collection_for_select(@weddings, "id", "name_wedding"), class: 'form-control')%>
-	        			</div>
-	        		</div>
-	        		<div class="item form-group" >
-		        		<%= label_tag('file', 'Upload your file', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
-		        		<div class="col-md-6 col-sm-6 col-xs-12">
-			        		<%= file_field_tag :file, class: "form-control" %>
-	              </div>
-            	</div>
-	        		<div class="ln_solid"></div>
-	        		<div class="form-group">
-	        			<%= button_tag("Submit", class: "btn btn-primary") %>
-	        		</div>
-	        	<% end %>
+	        <div class="x_content" id="reload">
+	        	<%= render 'admin/wedding/component/table.html' %>
 	        </div>
 	      </div>
 	    </div>
 	  </div>
 
+	  <%= render 'admin/wedding/component/add_form.html' %>
+	  <%= render 'admin/wedding/component/edit_form.html' %>
 
 	</div>
 </div>
-
 
 
 
