@@ -1,0 +1,73 @@
+<% content_for :javascript do %>
+	<%= render "test_js" %>
+<% end %>
+
+<div class="right_col" role="main" style="min-height: 3790px;">
+  <div class="page-title">
+	    <div class="title_left">
+	      <h3>About Us</h3>
+	    </div>
+
+	    <div class="title_right">
+	      <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+	        <div class="input-group">
+	          <input type="text" class="form-control" placeholder="Search for...">
+	          <span class="input-group-btn">
+	            <button class="btn btn-default" type="button">Go!</button>
+	          </span>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="clearfix"></div>
+
+		<div class="row">
+			 <div class="col-md-12 col-sm-12 col-xs-12">
+	      <div class="x_panel"> <!-- Index, show all data from about table -->
+	        <div class="x_title">
+						<h2>About Us List</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" onClick="showForm();"><i class="fa fa-wrench"></i></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Settings 1</a>
+									</li>
+									<li><a href="#">Settings 2</a>
+									</li>
+								</ul>
+							</li>
+							<li><a class="close-link"><i class="fa fa-close"></i></a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">
+	        	<%= form_tag('/admin/about/index', class: 'form-horizontal form-label-left', multipart: true)  do %>
+	        		<div class="item form-group">
+	        			<%= label_tag('choose', 'Choose wedding', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+	        			<div class="col-md-6 col-sm-6 col-xs-12">
+	        				<%#= select_tag("wedding",options_from_collection_for_select(@weddings, "id", "name_wedding"), class: 'form-control')%>
+	        			</div>
+	        		</div>
+	        		<div class="item form-group" >
+		        		<%= label_tag('file', 'Upload your file', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+		        		<div class="col-md-6 col-sm-6 col-xs-12">
+			        		<%#= file_field_tag :file, class: "form-control" %>
+	              </div>
+            	</div>
+	        		<div class="ln_solid"></div>
+	        		<div class="form-group">
+	        			<%#= button_tag("Submit", class: "btn btn-primary") %>
+	        		</div>
+	        	<% end %>
+	        </div>
+				</div>
+				<div class="x_panel" id="input_form" style="display:none;">
+					input form
+				</div>
+			</div>
+		</div>
+</div>

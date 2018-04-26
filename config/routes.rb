@@ -10,5 +10,6 @@ Rails.application.routes.draw do
         post :import
       end
     end
+    resources :about
 	end
 end
