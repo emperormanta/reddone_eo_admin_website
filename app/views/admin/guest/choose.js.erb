@@ -1,0 +1,6 @@
+$('#table-guest').html("<%= escape_javascript(render 'admin/guest/component/table.html') %>");
+
+$("#add-guest-aksen").on("click",function(){
+	$("#import-guest").show();
+	$("#table-guest").hide();	
+});

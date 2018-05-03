@@ -1,0 +1,23 @@
+<table id="data-table" class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th>Image File Location</th>
+			<th>Image Description</th>
+			<th>Active</th>
+			<th>Create By</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @galleries.each do |gallery| %>
+			<tr>
+				<td><%= gallery.image_file_location %></td>
+				<td><%= gallery.image_description %></td>
+				<td><%= gallery.active %></td>
+				<td><%= gallery.create_by %></td>
+				<td><a id="<%= gallery.id %>" class="fa fa-edit"></a> || 
+					<%= link_to '', admin_gallery_path(gallery.id), class: "fa fa-trash", method: :delete, data: { confirm: 'Are you sure?'}  %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

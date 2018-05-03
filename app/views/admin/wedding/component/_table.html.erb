@@ -3,6 +3,8 @@
 		<tr>
 			<th>Nama Wedding</th>
 			<th>Owner</th>
+			<th>Event Date</th>
+			<th>Image</th>
 			<th>Action</th>
 		</tr>
 	</thead>
@@ -11,6 +13,8 @@
 			<tr>
 				<td><%= wedding.name_wedding %></td>
 				<td><%= wedding.owner %></td>
+				<td><%= wedding.event_date %></td>
+				<td><%= image_tag wedding.pic_wedding.url(:medium) %></td>
 				<td><a id="<%= wedding.id %>" class="fa fa-edit"></a> || 
 					<%= link_to '', admin_wedding_path(wedding.id), class: "fa fa-trash", method: :delete, data: { confirm: 'Are you sure?'}  %></td>
 			</tr>
