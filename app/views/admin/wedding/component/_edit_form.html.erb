@@ -11,7 +11,7 @@
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-      	<%= form_tag('/admin/wedding', class: 'form-horizontal form-label-left', method:'put', remote:true,id: 'edit_form_wedding')  do %>
+      	<%= form_tag('/admin/wedding', class: 'form-horizontal form-label-left', method:'put', remote:true,id: 'edit_form_wedding', multipart:true)  do %>
       		<div class="item form-group">
       			<%= label_tag('edit_name_wedding', 'Nama Wedding', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
       			<div class="col-md-6 col-sm-6 col-xs-12">
@@ -24,6 +24,18 @@
 	        		<%= text_field_tag("edit_owner",nil, class: "form-control") %>
             </div>
         	</div>
+          <div class="item form-group">
+            <%= label_tag('event_date', 'Tanggal Acara', class:"control-label col-md-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= select_date Date.today, prefix: :start_date, class: "form-control" %>
+            </div> 
+          </div>
+          <div class="item form-group" >
+            <%= label_tag('file', 'Upload your file', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= file_field_tag :pic_wedding, class: "form-control" %>
+            </div>
+          </div>
       		<div class="ln_solid"></div>
       		<div class="form-group">
       			<%= button_tag("Submit", class: "btn btn-primary") %>

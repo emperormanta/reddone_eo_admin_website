@@ -1,0 +1,36 @@
+<div class="row" id="import-guest">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Form Import Guest <small>Sessions</small></h2>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><%# link_to new_admin_guest_path, :remote => true do %>
+  							<a id="back-import-guest" ><i class="fa fa-chevron-left"></i></a>
+							<%# end %>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+      	<%= form_tag('/admin/guest/import', class: 'form-horizontal form-label-left', multipart: true)  do %>
+      		<div class="item form-group">
+      			<%= label_tag('choose', 'Choose wedding', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+      			<div class="col-md-6 col-sm-6 col-xs-12">
+      				<%= select_tag("wedding",options_from_collection_for_select(@weddings, "id", "name_wedding"), class: 'form-control')%>
+      			</div>
+      		</div>
+      		<div class="item form-group" >
+        		<%= label_tag('file', 'Upload your file', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+        		<div class="col-md-6 col-sm-6 col-xs-12">
+	        		<%= file_field_tag :file, class: "form-control" %>
+            </div>
+        	</div>
+      		<div class="ln_solid"></div>
+      		<div class="form-group">
+      			<%= button_tag("Submit", class: "btn btn-primary") %>
+      		</div>
+      	<% end %>
+      </div>
+    </div>
+  </div>
+</div>

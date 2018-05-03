@@ -7,6 +7,7 @@ class CreateGuests < ActiveRecord::Migration[5.2]
     	t.string :address
     	t.boolean :presence
     	t.string :note
+      t.string :url
 
       t.timestamps
     end

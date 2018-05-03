@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   namespace :admin do
    # root :to => "wedding#index"
     resources :wedding
+    resources :gallery
     resources :guest do 
       collection do
         post :import
+        get :choose
       end
     end
 	end

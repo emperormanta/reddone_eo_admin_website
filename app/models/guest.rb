@@ -6,7 +6,8 @@ class Guest < ApplicationRecord
 		(2..spreadsheet.last_row).each do |i|
 		  row = Hash[[header, spreadsheet.row(i)].transpose]
 		  row["wedding_id"] = wedding_id
-		  row["guest_id"] = generate_number(row["name"]) 
+		  row["guest_id"] = generate_number(row["name"])
+		  row["url"] = generate_url wedding_id 
 			guest = find_by_id(row["id"]) || new
 		  guest.attributes = row.to_hash
 		  guest.save!
@@ -21,6 +22,10 @@ class Guest < ApplicationRecord
 				intial_name << split_name[x].first
 			end
 			return intial_name
+	end
+
+	def self.generate_url wedding_id
+		return CONFIG['url_red']+wedding_id.to_s+"/"+SecureRandom.base64[0..3]
 	end
 
   def self.generate_number(name)
