@@ -1,0 +1,36 @@
+<div class="row" id="form-edit">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Edit About</h2>
+        <ul class="nav navbar-right panel_toolbox">
+          <li><a id='back-to-list' ><i class="fa fa-chevron-left"></i></a></li>
+          <li><a class="close-link"><i class="fa fa-close"></i></a>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+      	<%= form_tag('/admin/about', class: 'form-horizontal form-label-left', method:'put', remote:true,id: 'edit_form_about')  do %>
+      		<div class="item form-group">
+      			<%= label_tag('edit_description_about_label', 'Description', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+      			<div class="col-md-6 col-sm-6 col-xs-12">
+      				<%= text_field_tag("edit_description_about", nil, class: 'form-control')%>
+      			</div>
+      		</div>
+      		 <div class="item form-group">
+            <%= label_tag("activeEdit", "Active", class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= select_tag("active", options_for_select(["Active", "Inactive"])) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= button_tag("Submit", class: "btn btn-primary") %>
+            </div>
+          </div>
+      	<% end %>
+      </div>
+    </div>
+  </div>
+</div>

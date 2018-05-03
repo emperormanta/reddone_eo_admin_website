@@ -1,0 +1,24 @@
+<table id="about_list" class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Description</th>
+      <th>Active</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @abouts.order(:id).each do |about| %>
+      <tr>
+        <td id="about_id"><%= about.id %></td>
+        <td><%= about.description %></td>
+        <% if about.active %>
+          <td><span class="badge badge-success">Active</span></td>
+        <% else %>
+          <td><span class="badge badge-warning">Inactive</span></td>
+        <% end %>
+        <td><a id="<%= about.id %>" class="fa fa-edit" onClick="fillEdit(this);"></a> || <%= link_to '', admin_about_path(about.id), class: "fa fa-trash", method: :delete, data:{confirm: "Are You Sure ? "} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

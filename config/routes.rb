@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       end
     end
     resources :about
+    resources :promo
 	end
 end
