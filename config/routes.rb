@@ -12,5 +12,6 @@ Rails.application.routes.draw do
         get :choose
       end
     end
+    resources :about
 	end
 end

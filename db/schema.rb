@@ -15,10 +15,9 @@ ActiveRecord::Schema.define(version: 2018_04_27_040336) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "galleries", force: :cascade do |t|
-    t.string "image_file_location"
-    t.string "image_description"
-    t.boolean "active", default: true
+  create_table "abouts", force: :cascade do |t|
+    t.text "description"
+    t.boolean "active"
     t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
