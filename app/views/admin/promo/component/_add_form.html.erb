@@ -1,0 +1,46 @@
+<div class="row" id="form-add" style="display:none;">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Add new promo</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="x_content">
+        <%= form_tag('/admin/promo', class: 'form-horizontal form-label-left', method:'post', remote:true)  do %>
+          <div class="item form-group">
+            <%= label_tag('name', 'Name', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= text_area_tag("name", nil, class: 'form-control')%>
+            </div>
+          </div>
+          <div class="item form-group">
+            <%= label_tag('description', 'Description', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= text_area_tag("description", nil, class: 'form-control')%>
+            </div>
+          </div>
+          <div class="item form-group">
+            <%= label_tag('promo_date_start', 'Promo Date', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 19px;">
+              <div class="row">
+                <%= select_date Date.today, prefix: :promo_date_start, class: "form-control" %> to 
+                <%= select_date Date.today, prefix: :promo_date_end, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+          <div class="item form-group">
+            <%= label_tag("active", "Active", class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= select_tag("active", options_for_select(["Active", "Inactive"])) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= button_tag("Submit", class: "btn btn-primary") %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

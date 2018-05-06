@@ -1,0 +1,30 @@
+<table id="promo_list" class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Promo Date</th>
+      <th>Active</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @promos.order(:id).each do |promo| %>
+      <tr>
+        <td id="about_id"><%= promo.id %></td>
+        <td><%= promo.name %></td>
+        <td><%= promo.description %></td>
+        <td><%= "#{promo.promo_date_start.strftime("%d %B %Y")} - #{promo.promo_date_end.strftime("%d %B %Y")}"%></td>
+        <% if promo.active %>
+          <td><span class="badge badge-success">Active</span></td>
+        <% else %>
+          <td><span class="badge badge-warning">Inactive</span></td>
+        <% end %>
+        <td><a id="<%= promo.id %>" class="fa fa-edit" onClick="fillEdit(this);"></a> || <%= link_to '', admin_promo_path(promo.id), class: "fa fa-trash", method: :delete, data:{confirm: "Are You Sure ? "} %></td>
+        <td style="display:none;"><%= promo.promo_date_start %></td>
+        <td style="display:none;"><%= promo.promo_date_end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -5,4 +5,6 @@
 
 $(function(){
 	$('#data-table').DataTable();
+	$('#about_list').DataTable();
+	$('#promo_list').DataTable();
 });

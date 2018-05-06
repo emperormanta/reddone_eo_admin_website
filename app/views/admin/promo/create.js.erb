@@ -1,0 +1,7 @@
+alert('success');
+$('#name').val('');
+$('#description').val('');
+$('#promo_date_start').val('');
+$('#promo_date_end').val('');
+$("#form-add").hide();
+$('#reload').html("<%=escape_javascript(render 'admin/promo/component/table.html' )%>");

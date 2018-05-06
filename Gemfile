@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # Import file xls
 gem "roo", "~> 2.4.0"
 gem "roo-xls"
-
+gem "pry"
 gem "font-awesome-rails"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
