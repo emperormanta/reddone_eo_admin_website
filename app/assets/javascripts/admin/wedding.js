@@ -12,6 +12,7 @@ $('.fa-edit').on('click',function(){
 	$('#edit_form_wedding').attr("action", "wedding/"+$id);
 	$('#edit_wedding_name').val($row['0']['outerText']);
 	$('#edit_owner').val($row['1']['outerText']);
+	$()
 	$('#form-edit').show();
 	$('#table-wedding').hide();
 });

@@ -4,3 +4,12 @@ $("#add-guest-aksen").on("click",function(){
 	$("#import-guest").show();
 	$("#table-guest").hide();	
 });
+
+$("#send-email").on("click",function(){
+	let id = $("#wedding option:selected").val();
+	$.ajax({
+		url: '/admin/guest/send_mail',
+		method: 'get',
+		data: {wedding_id:id}
+	});
+});

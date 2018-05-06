@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_04_27_040336) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string "image_file_location"
+    t.string "image_description"
+    t.boolean "active", default: true
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "guests", force: :cascade do |t|
     t.string "guest_id"
     t.string "name"

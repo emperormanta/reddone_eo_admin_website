@@ -24,4 +24,12 @@ class Admin::GuestController < ApplicationController
 		end
 	end
 
+	def send_mail
+		guests = Guest.where(wedding_id:params[:wedding_id])
+		wedding = Wedding.find_by(id:params[:wedding_id])
+		guests.each do |guest|
+			UsermailerMailer.send_email_action(guest.email,guest.guest_id,wedding.name_wedding).deliver_now
+		end
+	end
+
 end
