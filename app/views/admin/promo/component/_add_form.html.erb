@@ -23,8 +23,8 @@
             <%= label_tag('promo_date_start', 'Promo Date', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
             <div class="col-md-6 col-sm-6 col-xs-12" style="padding-left: 19px;">
               <div class="row">
-                <%= select_date("promo_date_start", order: [:year, :month, :day]) %> to 
-                <%= select_date("promo_date_end", order: [:year, :month, :day]) %>
+                <%= select_date Date.today, prefix: :promo_date_start, class: "form-control" %> to 
+                <%= select_date Date.today, prefix: :promo_date_end, class: "form-control" %>
               </div>
             </div>
           </div>

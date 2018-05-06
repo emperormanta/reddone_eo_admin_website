@@ -12,8 +12,12 @@ function fillEdit(params){
   $('#description').val($row['2'].innerHTML);
   let $date_start = $row["6"].innerHTML;
   let $date_end = $row["7"].innerHTML;
-  console.log($("#promo_date_start"));
-  $("#promo_date_start").val($date_start);
+  // $("#promo_date_end_year").val($date_end.split("-")[0]);
+  // $("#promo_date_end_month").val($date_end.split("-")[1]);
+  $("#promo_date_end_day").val($date_end.split("-")[2]);
+  // $("#promo_date_start_year").val($date_start.split("-")[0]);
+  // $("#promo_date_start_month").val($date_start.split("-")[1]);
+  // $("#promo_date_start_day").val($date_start.split("-")[2]);
   if ($row["4"].innerText == "Active") {
     $("#active").val("Active");
   } else {

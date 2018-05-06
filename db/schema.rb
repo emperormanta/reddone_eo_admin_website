@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_05_03_113246) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.string "image_file_location"
+    t.string "image_description"
+    t.boolean "active", default: true
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "guests", force: :cascade do |t|
     t.string "guest_id"
     t.string "name"
@@ -30,7 +39,6 @@ ActiveRecord::Schema.define(version: 2018_05_03_113246) do
     t.string "address"
     t.boolean "presence"
     t.string "note"
-    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "wedding_id"
@@ -50,8 +58,6 @@ ActiveRecord::Schema.define(version: 2018_05_03_113246) do
   create_table "weddings", force: :cascade do |t|
     t.string "name_wedding"
     t.string "owner"
-    t.string "location"
-    t.date "event_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pic_wedding_file_name"
