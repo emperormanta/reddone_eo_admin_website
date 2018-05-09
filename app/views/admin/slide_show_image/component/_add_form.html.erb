@@ -1,0 +1,42 @@
+<div class="row" id="form-add" style="display:none;">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2>Add new Slideshow image</h2>
+        <div class="clearfix">
+      </div>
+      <div class="x_content">
+        <%= form_tag("/admin/slide_show_image", class: "form-horizontal form-label-left", method: "post", remote:true, multipart: true) do %>
+          <div class="item form-group">
+            <%= label_tag("title", "Title", class:"control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= text_field_tag("title", nil, class: "form-control") %>
+            </div>
+          </div>
+          <div class="item form-group">
+            <%= label_tag("description", "Description", class:"control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= text_area_tag("description", nil, class: "form-control") %>
+            </div>
+          </div>
+          <div class="item form-group">
+            <%= label_tag("active", "Active", class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= select_tag("active", options_for_select(["Active", "Inactive"])) %>
+            </div>
+          </div>
+          <div class="item form-group" >
+            <%= label_tag('file', 'Upload your image', class: "control-label col-md-3 col-sm-3 col-xs-12") %>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <%= file_field_tag :pic_slideshow, class: "form-control" %>
+            </div>
+          </div>
+          <div class="ln_solid"></div>
+      		<div class="form-group">
+      			<%= button_tag("Submit", class: "btn btn-primary") %>
+      		</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

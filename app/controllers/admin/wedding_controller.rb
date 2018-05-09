@@ -6,6 +6,7 @@ class Admin::WeddingController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		if Wedding.create(name_wedding: params[:wedding_name],
 			owner: params[:owner],
 			pic_wedding:params[:pic_wedding],

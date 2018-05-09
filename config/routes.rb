@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     end
     resources :about
     resources :promo
+    resources :slide_show_image
 	end
 end

@@ -23,5 +23,15 @@ class Admin::PromoController < ApplicationController
   end
 
   def destroy
+    promo = Promo.find(params[:id])
+    if promo.destroy
+      respond_to do |f|
+        f.html { redirect_to admin_promo_index_path }
+      end
+    else
+      respond_to do |f|
+        f.html
+      end
+    end
   end
 end

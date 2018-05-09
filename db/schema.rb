@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_113246) do
+ActiveRecord::Schema.define(version: 2018_05_08_103315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_05_03_113246) do
     t.string "address"
     t.boolean "presence"
     t.string "note"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "wedding_id"
@@ -55,9 +56,24 @@ ActiveRecord::Schema.define(version: 2018_05_03_113246) do
     t.date "promo_date_end"
   end
 
+  create_table "slide_show_images", force: :cascade do |t|
+    t.text "description"
+    t.boolean "active"
+    t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "pic_slideshow_file_name"
+    t.string "pic_slideshow_content_type"
+    t.integer "pic_slideshow_file_size"
+    t.datetime "pic_slideshow_updated_at"
+    t.string "title"
+  end
+
   create_table "weddings", force: :cascade do |t|
     t.string "name_wedding"
     t.string "owner"
+    t.string "location"
+    t.date "event_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pic_wedding_file_name"
