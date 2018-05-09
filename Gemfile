@@ -30,6 +30,7 @@ gem 'pg'
 gem 'gentelella-rails'
 gem 'jquery-rails'
 gem "paperclip", "~> 6.0.0"
+gem 'dropzonejs-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -68,3 +69,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Print Qr
+gem 'barby'
+gem 'rqrcode'
